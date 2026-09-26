@@ -408,7 +408,7 @@ class ProjectBrainRegistryTests(unittest.TestCase):
     def test_credential_shapes_are_redacted_with_value_derived_privacy_truth(self):
         sensitive = [
             ("local-cccccccccccccccccccccccccccccccc", "Production AKIAIOSFODNN7EXAMPLE"),
-            ("local-dddddddddddddddddddddddddddddddd", "release " + "gh" + "p_ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"  # built at runtime: not a committed token literal),
+            ("local-dddddddddddddddddddddddddddddddd", "release " + "gh" + "p_ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"),
             (
                 "local-eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
                 "alerts " + "xo" + "xb-123456789012-123456789012-abcdefghijklmnopqrstuvwx",
