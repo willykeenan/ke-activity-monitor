@@ -2,7 +2,7 @@
 """
 Activity Monitor — Native macOS app using pywebview + psutil
 No Flask, no web server. Direct JS↔Python bridge.
-Built by Jarvis 🦈
+KE Studios
 """
 
 import json
