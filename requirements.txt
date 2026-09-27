@@ -1,7 +1,7 @@
-pyinstaller==6.22.2
+# Runtime dependencies. pyobjc 12 dropped Python 3.9 (its 12.0 release was yanked for wrongly claiming it),
+# so macOS's built-in Python 3.9 needs the 11.x line.
 psutil==7.2.2
 pywebview==6.1
-# pyobjc 12 dropped Python 3.9 (12.0 was yanked for wrongly claiming it); the universal2 build uses /usr/bin/python3 (3.9).
 pyobjc-core==11.1; python_version < "3.10"
 pyobjc-framework-Cocoa==11.1; python_version < "3.10"
 pyobjc-framework-Quartz==11.1; python_version < "3.10"

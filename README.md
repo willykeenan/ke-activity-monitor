@@ -42,7 +42,7 @@ It needs macOS 12 or later and Python 3.9 or later.
 ```bash
 git clone https://github.com/willykeenan/ke-activity-monitor
 cd ke-activity-monitor
-python3 -m pip install psutil pywebview
+python3 -m pip install -r requirements.txt
 python3 activity_monitor.py
 ```
 

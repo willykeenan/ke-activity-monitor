@@ -1,0 +1,32 @@
+name: ci
+on:
+  push:
+  pull_request:
+jobs:
+  test:
+    runs-on: macos-14
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.9", "3.12"]
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt playwright
+          python -m playwright install chromium
+      - name: Tests (including the rendered process-table security test)
+        run: python -m unittest discover -s tests -p 'test_*.py' -v
+      - name: Syntax check the embedded page script
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import activity_monitor
+          script = activity_monitor.HTML.rsplit("<script>", 1)[1].split("</script>", 1)[0]
+          Path("combined.js").write_text(script, encoding="utf-8")
+          PY
+          node --check combined.js
