@@ -4,6 +4,8 @@
 
 Everything runs locally. Nothing is uploaded, and nothing changes on your Mac unless you click an explicit action.
 
+Tour with screenshots: [huggingface.co/spaces/willykeenan/activity-monitor](https://huggingface.co/spaces/willykeenan/activity-monitor)
+
 ![The Agents view: per-core CPU, GPU compute, memory pressure, AI processes, CPU worker pools with published progress, and GPU jobs](docs/images/agents.png)
 
 <sub>These screenshots come from the real app with real telemetry from a Mac. Project, task, brain and host names are invented (see [how they were made](docs/screenshots/README.md)).</sub>
