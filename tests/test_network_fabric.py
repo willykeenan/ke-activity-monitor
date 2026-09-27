@@ -1558,6 +1558,7 @@ class KELinkTruthTests(unittest.TestCase):
             advertise=False,
             listener_addresses=["192.168.1.10"],
             allowed_networks=["192.168.1.0/24"],
+            interface_provider=fixture_interfaces,  # never the host's real network (CI runners have no 192.168.1.x)
         )
         self.assertEqual(private._listener_scope()[0], "192.168.1.10")
         for address, network in (("0.0.0.0", "0.0.0.0/0"), ("8.8.8.8", "8.8.8.0/24"), ("::1", "::1/128")):
